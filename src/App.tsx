@@ -1,18 +1,29 @@
-import reactLogo from './assets/react.svg'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AboutPage from "@/pages/AboutPage";
+import {SiteProvider} from "@/context/SiteContext";
+import LayoutPage from "@/pages/LayoutPage";
+import HomePage from "@/pages/HomePage";
+import ContactPage from "@/pages/ContactPage";
+import ScrollToHash from "@/components/utils/ScrollToHash";
+
 
 function App() {
   return (
-      <div className="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-        <img className="size-12 shrink-0" src={reactLogo} alt="React + Tailwind" />
-        <div>
-          <div className="text-xl font-medium text-black dark:text-white">
-            React + Tailwind
-          </div>
-          <p className="text-gray-500 dark:text-gray-400">
-            If you see a rounded border with shadow, it's working!
-          </p>
-        </div>
-      </div>
+      <>
+          <Router>
+              <SiteProvider>
+                  <ScrollToHash/>
+                  <Routes>
+                      <Route path="/" element={<LayoutPage />}>
+                          <Route index element={<HomePage />} />
+                          <Route path="/about" element={<AboutPage />} />
+                          <Route path="/contact" element={<ContactPage />} />
+                      </Route>
+                  </Routes>
+              </SiteProvider>
+          </Router>
+      </>
+
   )
 }
 

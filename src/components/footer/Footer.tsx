@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <>
             <footer className="pt-16 bg-linear-to-b from-black to-blue-950/80 backdrop-blur-sm pb-2 text-center text-sm text-[#d6d3b1]">
-                <div className="mx-auto grid max-w-6xl grid-cols-3 justify-items-center gap-y-4">
+                <div className="mx-auto grid max-sm:gap-8 max-sm:grid-cols-1 max-w-6xl grid-cols-3 justify-items-center gap-y-4">
 
                     <div>
                         <h3 className="text-lg border-b-2 mb-2">Quick Links</h3>
@@ -72,7 +72,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className="flex gap-6 pt-14 mb-0 flex-row justify-end md:justify-center mx-11">
+                <div className="flex gap-6 pt-14 max-sm:justify-center mb-0 flex-row justify-end md:justify-center mx-11">
                     {/* Links to social media badges */}
                     <Link to="https://www.linkedin.com/in/ahmedduale/" target="_blank" rel="noopener noreferrer">
                         <LinkedinLogoIcon className="w-7 h-7 hover:bg-purple-600" />
